@@ -1,0 +1,1 @@
+该demo用来测试react, react-router, redux, redux-thunk redux-saga 的基础特性

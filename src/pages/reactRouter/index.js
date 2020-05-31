@@ -60,21 +60,21 @@ const BasicExample = (props) => {
             <div>
                 <ul>
                     <li>
-                        <Link to="/reactRouterHome">Home</Link>
+                        <Link to="/reactRouter/home">Home</Link>
                     </li>
                     <li>
-                        <Link to="/reactRouterHome/about">About</Link>
+                        <Link to="/reactRouter/about">About</Link>
                     </li>
                     <li>
-                        <Link to="/reactRouterHome/topics">Topics</Link>
+                        <Link to="/reactRouter/topics">Topics</Link>
                     </li>
                 </ul>
 
                 <hr />
 
-                <Route exact path="/reactRouterHome" component={Home} />  
-                <Route path="/reactRouterHome/about" component={About} />
-                <Route path="/reactRouterHome/topics" component={Topics} /> 
+                <Route path="/reactRouter/home" component={Home} />  
+                <Route path="/reactRouter/about" component={About} />
+                <Route path="/reactRouter/topics" component={Topics} /> 
             </div>
         </HashRouter>
     )

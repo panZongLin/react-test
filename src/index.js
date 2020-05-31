@@ -1,7 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-import './reset.css';
-import Router from './router';
+import RouterRoot from './routerRoot';
 
-ReactDOM.render(<Router />, document.getElementById('root'));
+ReactDOM.render(<RouterRoot />, document.getElementById('root'));

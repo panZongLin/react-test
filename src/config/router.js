@@ -14,6 +14,10 @@ const ReduxTodoList = lazy(()=> import('../pages/reduxTodoList'));
 
 const SagaTest = lazy(()=> import('../pages/sagaTest'));
 
+const ReactZmage = lazy(()=> import('../pages/react-zmage'));
+const ReactCropper = lazy(()=> import('../pages/react-cropper'));
+const ReactDraftWysiwyg = lazy(()=> import('../pages/react-draft-wysiwyg'));
+
 const routerConfig = [
   {
     path: '/',
@@ -54,6 +58,18 @@ const routerConfig = [
   {
     path: '/sagaTest',
     component: SagaTest
+  },
+  {
+    path: '/react-zmage',
+    component: ReactZmage
+  },
+  {
+    path: '/react-cropper',
+    component: ReactCropper
+  },
+  {
+    path: '/react-draft-wysiwyg',
+    component: ReactDraftWysiwyg
   },
 ]
 

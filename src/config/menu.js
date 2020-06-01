@@ -56,6 +56,25 @@ const menuConfig = [
     to: '/sagaTest', 
     icon: 'BookOutlined',
   },
+  {
+    title: 'components',
+    to: null, 
+    icon: 'BookOutlined',
+    sub: [
+      {
+        title: 'react-zmage',
+        to: '/react-zmage',
+      },
+      {
+        title: 'react-cropper',
+        to: '/react-cropper',
+      },
+      {
+        title: 'react-draft-wysiwyg',
+        to: '/react-draft-wysiwyg',
+      }
+    ]
+  },
 ]
 
 export default menuConfig;

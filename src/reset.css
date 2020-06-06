@@ -11,8 +11,7 @@ audio, video {
     outline:0;
     vertical-align:baseline;
     background:transparent;
-    outline-style:none;/*FF*/ 
-    font-size: 16px;
+    outline-style:none;/*FF*/
 }
 
 body {

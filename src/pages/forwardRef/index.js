@@ -1,6 +1,8 @@
 import React, {Component} from 'react';
-import HOCFnAddRef from './HOCFnAddRef';
-import Input from './Input';
+import {Button} from 'antd';
+import InputElement from './Input';
+
+//import HocForwardedRef from './HocForwardedRef';
 
 
 class TestInput extends Component {
@@ -14,9 +16,11 @@ class TestInput extends Component {
     render() {
         return(
             <div>
-                <h1>refs转发</h1>
-                <Input ref={this.inputRef} />
-                <button onClick={this.foucs}>获取焦点</button>
+                <h1>React.forwardRef</h1>
+                <InputElement ref={this.inputRef} defaultValue={123456} />
+                <Button onClick={this.foucs} style={{marginTop: '10px'}}>
+                    获取焦点
+                </Button>
             </div>
         )
     }

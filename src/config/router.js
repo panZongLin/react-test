@@ -10,7 +10,6 @@ const Hooks = lazy(() => import('../pages/hooks'));
 const ReactRouter = lazy(() => import('../pages/reactRouter'));
 
 const ReduxTest = lazy(() => import('../pages/reduxTest'));
-const ReduxTodoList = lazy(() => import('../pages/reduxTodoList'));
 
 const SagaTest = lazy(() => import('../pages/sagaTest'));
 
@@ -50,11 +49,7 @@ const routerConfig = [
 	{
 		path: '/reduxTest',
 		component: ReduxTest
-	},
-	{
-		path: '/reduxTodoList',
-		component: ReduxTodoList
-	},
+	},	
 	{
 		path: '/sagaTest',
 		component: SagaTest

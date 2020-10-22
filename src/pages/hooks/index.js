@@ -68,8 +68,7 @@ function Example() {
             </h3>
             <Button onClick={()=> setCount(0)}>重置</Button>
             <Button onClick={()=> setCount(count + 1)}>加 + 1</Button>
-            <Button onClick={()=> setCount(prevCount => prevCount - 1)}>减 - 1</Button>
-          
+            <Button onClick={()=> setCount(prevCount => prevCount - 1)}>减 - 1</Button>       
         </div>
     )
 }

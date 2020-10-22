@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
-import {combineReducers, createStore} from 'redux';
+import {Button} from 'antd';
+import {combineReducers, createStore, applyMiddleware} from 'redux';
 
 const COUNT = 0;
 function countFn(state=COUNT, action) {
@@ -14,7 +15,7 @@ function countFn(state=COUNT, action) {
 }
 
 const BOOL = true;
-function toggle(state=true, action) {
+function toggleFn(state=true, action) {
     switch (action.type) {
         case 'right':
             return BOOL;
@@ -24,14 +25,13 @@ function toggle(state=true, action) {
             return state;
     }
 }
-// function reducer(state={}, action) {
-//     return {
-//         count: countFn(state.count, action),
-//         bool: toggle(state.bool, action)
-//     }
-// }
-const reducer = combineReducers({count: countFn, bool: toggle})
-let store = createStore(reducer);
+
+
+const reducer = combineReducers({count: countFn, bool: toggleFn})
+let store = createStore(reducer, applyMiddleware());
+{/* <Provider store={store}>
+    <App />
+</Provider> */}
 
 let cancelSubscribe = null;
 class ReduxTest extends Component {
@@ -84,14 +84,19 @@ class ReduxTest extends Component {
             <div>
                 <h2>count: {this.state.count}</h2>
                 <h2>bool: {JSON.stringify(this.state.bool)}</h2>
-                <button onClick={this.addCount}>+1</button>
-                <button onClick={this.reduceCount}>-1</button>
-                <br />
-                <button onClick={this.handleToggle}>toggle</button>
-                <br />
-                <button onClick={this.state.listerStatus ? this.cancelLister : this.addLister}>
-                    {this.state.listerStatus ? '取消' : '添加'}store监听
-                </button>
+
+                <div style={{marginTop: 10}}>
+                    <Button onClick={this.addCount}>+1</Button>
+                    <Button onClick={this.reduceCount}>-1</Button>
+                </div>
+                <div style={{marginTop: 10}}>
+                    <Button onClick={this.handleToggle}>toggle</Button>
+                </div>               
+                <div style={{marginTop: 10}}>
+                    <Button onClick={this.state.listerStatus ? this.cancelLister : this.addLister}>
+                        {this.state.listerStatus ? '取消' : '添加'}store监听
+                    </Button>
+                </div>                
             </div>
         )
     }

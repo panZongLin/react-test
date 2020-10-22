@@ -44,11 +44,7 @@ const menuConfig = [
 			{
 				title: 'ReduxTest',
 				to: '/reduxTest',
-			},
-			{
-				title: 'ReduxTodoList',
-				to: '/reduxTodoList',
-			},
+			}
 		]
 	},
 	{

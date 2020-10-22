@@ -6,7 +6,6 @@ function *hello() {
     console.log('hello saga');
 }
 
-
 function *addByAsync() {
     yield delay(2000);
     yield put({type: 'add'});

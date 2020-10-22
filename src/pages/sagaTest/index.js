@@ -1,8 +1,8 @@
 import React, {Component} from 'react';
+import {Button} from 'antd';
 import {combineReducers, createStore, applyMiddleware} from 'redux';
 import createSagaMiddleware from 'redux-saga';
-
-import rootSaga from './saga/rootSaga';
+import rootSaga from './rootSaga';
 
 const COUNT = 0;
 function countFn(state=COUNT, action) {
@@ -15,14 +15,11 @@ function countFn(state=COUNT, action) {
             return state;
     }
 }
-
-//combineReducers reducers
 const reducers = combineReducers({count: countFn});
-// create the saga middleware
+
+
 const sagaMiddleware = createSagaMiddleware()
-//create store
 let store = createStore(reducers, applyMiddleware(sagaMiddleware));
-//run saga
 sagaMiddleware.run(rootSaga);
 
 
@@ -56,11 +53,14 @@ class ReduxTest extends Component {
     render(){
         return(
             <div>
-                <h2>count: {this.state.count}</h2>
-                <button onClick={this.addCount}>add</button>
-                <button onClick={this.reduceCount}>reduce</button>
+                <h2 style={{marginBottom: 10}}>
+                    count: {this.state.count}
+                </h2>
+                <Button onClick={this.addCount}>add</Button>
                 <br />
-                <button onClick={this.addCountByAsync}>saga等2秒再执行add</button>
+                <Button onClick={this.reduceCount}>reduce</Button>
+                <br />
+                <Button onClick={this.addCountByAsync}>saga等2秒再执行add</Button>
             </div>
         )
     }

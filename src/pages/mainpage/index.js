@@ -14,10 +14,21 @@ const Mainpage = ()=> {
 		{style: eleSty},
 		'\(^o^)/'
 	)
+	const cloneEle = (element)=> {
+		//console.log('element', element)
+		return(
+			React.cloneElement(
+				element,
+				{style: {...element.props.style, color: '#54ff00'}},
+				<p>(꒦_꒦) </p>
+			)
+		)
+	}
 	// https://juejin.im/post/6885162791632633870
 	return (
 		<div style={{textAlign: 'center'}}>
 			{ele}
+			{cloneEle(ele)}
 			<TestProps t={1} />
 			<p style={eleSty} onClick={()=> setTitle('发现隐藏关卡，获得屠龙刀一把')}>
 				{title}

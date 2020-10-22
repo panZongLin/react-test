@@ -25,7 +25,7 @@ sagaMiddleware.run(rootSaga);
 
 
 let cancelSubscribe = null;
-class ReduxTest extends Component {
+class ReduxSagaTest extends Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -66,4 +66,4 @@ class ReduxTest extends Component {
     }
 }
 
-export default ReduxTest;
+export default ReduxSagaTest;
